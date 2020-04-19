@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <!-- Swap out "Roboto" for the font(s) you want to use -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Your own CSS -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <title>News & Map - a web App</title>
+  </head>
+  
+  <body>
+
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Kellogg Recipe Project</h1>
+  <p>Connect with your classmates through their authentic recipes from across the world!</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="/">Kellogg Recipe Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+    </ul>
+    <% if @current_user %>
+        <ul class="navbar-nav ml-auto">
+            <li class="navbar-nav ml-auto">
+                <a class="nav-link" href="/">Logged in as <%= @current_user[:namefirst]%> <%= @current_user[:namelast]%></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Log Out</a>
+            </li>
+        </ul>
+    <% end %>
+  </div>  
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <p>Placeholder for photo</p>
+    </div> 
+
+    <div class="row">
+        <div class="col-sm-4">
+            <p>
+                <%= @recipe[:title] %>
+            </p>
+        </div>
+        <div class="col-sm-8">
+            <p>
+                <%= @recipe[:shortdesc] %>
+            </p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <p>
+                <iframe
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw
+                &q=<%= @recipe[:location] %>&zoom=5" allowfullscreen>
+                </iframe>
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <% @recipe_user = @user_table.where(id: @recipe[:user_id]).to_a[0] %>
+            <h3> <%= @recipe_user[:namefirst] %> <%= @recipe_user[:namelast] %> </h3>
+            <p>
+                <iframe
+                frameborder="0" style="border:0"
+                src="<%= @recipe[:headshot] %>" allowfullscreen>
+                </iframe>
+            [placeholder for a headshot]
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <p>
+                <%= @recipe[:whyrecipe] %>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <p>
+                    <%= @recipe[:ingredients] %>
+                </p>
+            </div>
+            <div class="row">
+                <p>
+                    <%= @recipe[:subs] %>
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <p>
+                <%= @recipe[:directions] %>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <h6>Recipe likes:    
+            <% @comments_this_recipe_table = @comment_table.where(recipe_id: @recipe[:id], like: true).to_a %>
+            <%= @comments_this_recipe_table.count %>
+        </h6>
+    </div>
+
+<div class = "row">
+    <div class = "col-sm-2">
+        <h6>User Name</h6>
+    </div>
+    <div class = "col-sm">
+        <h6>Comment</h6>
+    </div>
+</div>
+<% for comment in @comment_table %>
+    <% if comment[:recipe_id] == @recipe[:id] %>
+            <div class="row">
+                <div class="col-sm-2">
+                    <% @user_of_comment = @user_table.where(id: comment[:user_id]).to_a[0] %>
+                    <p><%= @user_of_comment[:namefirst] %> <%= @user_of_comment[:namelast] %></p>
+                </div>
+                <div class="col-sm">
+                    <%= comment[:comment] %>
+                </div>                
+            </div>
+    <% else %>
+    <% end %>
+<% end %>
+
+
+    <div class="row">
+        <% if @current_user %>
+            <a href="/recipe/<%= @recipe[:id] %>/comment/new" class="btn btn-primary">comment on this recipe</a>
+        <% else %>
+        <% end %>
+    </div>
+
+
+</div>
+
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Kellogg Recipe Project</p>
+</div>
+</div>
