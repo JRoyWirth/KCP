@@ -1,23 +1,23 @@
 h1 {    
     color:darkslateblue;
-    font-family: Helvetica;
+    font-family: Arial;
     border: 0px;
 }
 h2 {
     color:black;
-    font-family: Helvetica;
+    font-family: Arial;
     border: 0px;
     text-align: center;
 }
 h3 {
     color:darkslateblue;
-    font-family: Helvetica;
+    font-family: Arial;
     border: 0px;
     }
 h4 {
     color: darkslateblue;
     outline: black;
-    font-family: Helvetica;
+    font-family: Arial;
 }
 #log_in {
     border: 1px solid black;
@@ -26,14 +26,8 @@ h4 {
 }
 p {
     color: darkslateblue;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial;
 }
-.dietary {
-    background-color: lightsalmon;
-    color: white;
-    padding: 10px;
-}
-
 img {
   width: 100%;
   height: auto;

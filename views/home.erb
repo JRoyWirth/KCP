@@ -79,10 +79,10 @@
         <th>Meal Type</th>
         <th>Contributor</th>
         <th>Program</th>
+        <th>Year</th>
         <th>Section</th>
         <th>Kwest</th>
         <th>Region</th>
-        <th>Description</th>
         <th>Dietary</th>
       </tr>
     </thead>
@@ -107,6 +107,10 @@
                 </td>
                 
                 <td>
+                    <%= recipe[:year] %>
+                </td>
+                
+                <td>
                     <%= recipe[:section]%>
                 </td>
                 
@@ -116,10 +120,6 @@
                 
                 <td>
                     <%= recipe[:location] %>
-                </td>
-                
-                <td>
-                    <%= recipe[:shortdesc] %>
                 </td>
 
                 <td>
