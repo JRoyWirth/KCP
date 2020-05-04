@@ -124,7 +124,7 @@ user_table.insert(
 
 user_table.insert(
                     namefirst: "Sai",
-                    namelast: "Guntari",
+                    namelast: "Gunturi",
                     email: "sai.guntari@kellogg.northwestern.edu",
                     pwd: "1234"
                     )
