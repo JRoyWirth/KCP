@@ -7,11 +7,13 @@ header,
 
 h1{
     font-family: Verdana;
-    color: white;
+    color: rgb(37, 26, 114);
+    font-weight: 1000;
 }
 
 .dark {
     font-weight: 1000;
+    color: rgb(37, 26, 114);
 }
 
 
