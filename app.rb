@@ -35,7 +35,7 @@ before do
 end
 
 get "/" do
-    view "index_new"
+    view "index"
 end
 
 post "/login/create" do
