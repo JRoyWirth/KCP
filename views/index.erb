@@ -24,7 +24,7 @@
 <body>
 <div class="view" style="background-image: url('https://raw.githubusercontent.com/JRoyWirth/KCP/master/views/Hummus.JPG'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light nav">
         <a class="navbar-brand" href="#">Kellogg Recipe Project</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
@@ -60,59 +60,78 @@
     </div>
 
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-3">
-            <div class="row"  style="display: flex; justify-content: center; align-items: center; background-color: hsla(0, 15%, 95%, .33)">
-                <h2>Sign In</h2>
+        <div class="row">
+            <div class="col-sm-4">
             </div>
-            <div class="row"  style="display: flex; justify-content: center; align-items: center; background-color: hsla(0, 15%, 95%, .33)">
-                <form action="/login/create" method="post" >
-                
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Enter email" name="email">
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Enter password" name="pwd">
-                    </div>
-                        
-                    <button type="submit" class="btn btn-success">start cooking</button>
-                
-                </form>
+            <div class="col-sm-4">
+                <div class="row"  style="display: flex; justify-content: center; align-items: center">
+                    <h2 class = "white">Sign In</h2>
                 </div>
-            <div class="row"  style="display: flex; justify-content: center; align-items: center; background-color: hsla(0, 15%, 95%, .33)">
-                <a href="/signup" style="color: black;"><strong>Sign up here</strong></a>
+                <div class="row"  style="display: flex; justify-content: center; align-items: center">
+                    <form action="/login/create" method="post" >
+                    
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="enter email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="enter password" name="pwd">
+                        </div>
+                            
+                        <button type="submit" class="btn btn-success">start cooking</button>
+                    
+                    </form>
+                </div>
+                <div class="row"  style="display: flex; justify-content: center; align-items: center">
+                    <a href="/signup" style="color: white;">Sign up here</a>
+                </div>
+            </div>
+            <div class="col-sm-4">
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="row">
+            <br><br><br>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-4"  style="display: flex; justify-content: center; align-items: center; text-align: center; background-color: hsla(0, 15%, 95%, .33)">
+                <h5 class="dark">
+                <strong>
+                    The Kellogg Cuisine Project is a private, online community for Kellogg community members to share recipes and personal stories. Please join us in learning more about one another while taking your taste buds on home-cooked trip around the world. 
+                </strong>
+                </h5>
+            </div>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-3" style="text-align: center">
+                <img src="https://raw.githubusercontent.com/JRoyWirth/KCP/master/views/Challah.jpg" style="max-width:100%;
+        max-height:100%; height:auto" alt="Challah">
+            </div>
+            <div class="col-sm-2">
+                <h2 class="white">
+                    Featured Recipe 
+                </h2>
+                <h5 class="white">
+                    Challah
+                </h5>
+                <h6 class="white">
+                    USA  
+                </h6>
+                <h6 class="white">
+                    Sarah Wirth, JV
+                </h6>
+                <p style="color: white">
+                    sign up to learn the story and recipe
+                <p>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-3" style="text-align: center">
-            <h2>
-                Featured Recipe 
-            </h2>
-            <h5>
-                Challah
-            </h5>
-            <h6>
-                Israel  
-            </h6>
-            <img src="https://raw.githubusercontent.com/JRoyWirth/KCP/master/views/Challah.jpg" style="max-width:75%;
-    max-height:75%; height:auto" alt="Challah">
-            <h6>
-                Sarah Wirth, JV
-            </h6>
-        </div>
-        <div class="col-sm-3">
-        </div>
-        <div class="col-sm-3"  style="display: flex; justify-content: center; align-items: center; text-align: center">
-            <p class="dark">
-            The Kellogg Cuisine Project is a private, online community for Kellogg community members to share recipes and personal stories. Please join us in learning more about one another while taking your taste buds on home-cooked trip around the world. 
-            </p>
-        </div>
-    </div>
+<footer style="background-color: rgb(37, 26, 114); color: white">
+  <p>Posted by: Jason Wirth </p>
+  <p> Contact information: <a href="mailto:jason.wirth@kellogg.northwestern.edu">
+  Jason.Wirth@kellogg.northwestern.edu</a></p>
+</footer>
 </div>
+
 
