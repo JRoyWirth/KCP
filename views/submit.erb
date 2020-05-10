@@ -23,145 +23,178 @@
   
   <body>
 
-
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>Kellogg Recipe Project</h1>
-  <p>Connect with your classmates through their authentic recipes from across the world!</p> 
-</div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="/">Kellogg Recipe Project</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-        <li class="nav-item">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light nav">
+        <a class="navbar-brand" href="/">Kellogg Recipe Project</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+         <li class="nav-item">
             <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/submit">Submit Recipe</a>
-        </li>
-    </ul>
-    <% if @current_user %>
-        <ul class="navbar-nav ml-auto">
-            <li class="navbar-nav ml-auto">
-                <a class="nav-link" href="/">Logged in as <%= @current_user[:namefirst]%> <%= @current_user[:namelast]%></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">Log Out</a>
-            </li>
+            <a class="nav-link" href="/submit"><b>Submit Recipe</b></a>
+        </li>   
         </ul>
-    <% end %>
-  </div>  
-</nav>
+        <% if @current_user %>
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-nav ml-auto">
+                    <a class="nav-link" href="/">Logged in as <%= @current_user[:namefirst]%> <%= @current_user[:namelast]%></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
+        <% end %>
+    </div>  
+    </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <p>description of information to submit and type of recipe to submit</p>
-    </div>
-    
-    <div class="row">
-        <div class="col-sm">
-            <form action="/recipe/create" method="post">
-                <div class="form-group">
-                    <label for="program">Program:</label>
-                    <select name="program">
-                        <option value="2Y">2Y</option>
-                        <option value="1Y">1Y</option>
-                        <option value="MMM">MMM</option>
-                        <option value="E&W">E&W</option>
-                        <option value="JV">JV</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="year">Kellogg Graduation Year:</label>
-                    <select name="year">
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="section">Section:</label>
-                    <select name="section">
-                        <option value="Big Dogs">Big Dogs</option>
-                        <option value="Buckets">Buckets</option>
-                        <option value="Bullfrogs">Bullfrogs</option>
-                        <option value="Cash Cows">Cash Cows</option>
-                        <option value="Highlanders">Highlanders</option>
-                        <option value="Moose">Moose</option>
-                        <option value="Poets">Poets</option>
-                        <option value="Turkeys">Turkeys</option>
-                        <option value="Roadrunners">Roadrunners</option>
-                        <option value="E&W">E&W</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="title">Title of Recipe:</label>
-                    <input type="text" class="form-control" placeholder="Apple Pie" name="title">
-                </div>
-                <div class="form-group">
-                    <label for="shortdesc">Short description of the dish:</label>
-                    <input type="text" class="form-control" rows="2" placeholder="Pastry dessert with baked apple filling" name="shortdesc">
-                </div>
-                <div class="form-group">
-                    <label for="whyrecipe">This dish means something to me because: </label>
-                    <textarea class="form-control" rows="2" name="whyrecipe"> examples: As a kid, I always wanted pie on my birthday! Apple pie especially reminds me of growing up in the midwest... or A moment I will never forget was living in ___ and always making.... or Every year when we visited my grandparents in ___ they would make....
-                    </textarea>
-                </div>
-                <div class="form-group">
-                    <label for="location">This recipe comes from: (either the recipe's place of origin or wherever "home" is to you)</label>
-                    <input type="text" class="form-control" placeholder="Downers Grove, IL or Illinois, U.S.A. or United States (city level is best)" name="location">
-                </div>
-                <div class="form-group">
-                    <label for="ingredients">Ingredients:</label>
-                    <textarea class="form-control" rows=10 name="ingredients"> 
-example:
-2 cups flour
-1/2 cup sugar
-5 green apples...
-                    </textarea>
-                </div>
-                <div class="form-group">
-                    <label for="subs">Substitutions for ingredients difficult to obtain in Evanston:</label>
-                    <textarea class="form-control" rows="3" name="subs">
-example: Red apples can be substituted for green apples, use less sugar...
-                    </textarea>
-                </div>
-                <div class="form-group">
-                    <label for="directions">Directions:</label>
-                    <textarea class="form-control" rows="10" name="directions">
-example: 1. Core and peel each apple...
-                    </textarea>
-                </div>
-                <div class="form-group">
-                    <label for="meal">Meal Type:</label><br>
-                    <select name="meal">
-                        <option value="App">Appetizer</option>
-                        <option value="Breakfast">Breakfast</option>
-                        <option value="Lunch">Lunch</option>
-                        <option value="Dinner">Dinner</option>
-                        <option value="Side Dish">Side</option>
-                        <option value="Dessert">Dessert</option>
-                        <option value="Beverage">Beverage</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <h7>Dietary restrictions:<br></h7>
-                        <input type="checkbox" name="meatless" value="1">
-                            <label for="meatless"> Meat free </label><br>
-                        <input type="checkbox" name="dairyfree" value="1">
-                            <label for="dairyfree"> Dairy free </label><br>
-                        <input type="checkbox" name="glutenfree" value="1">
-                            <label for="glutenfree"> Gluten free </label><br>
-                </div>
-            <br> <button type="submit" class="btn btn-primary">Submit</button> <br><br>
-            </form>     
+
+
+<div class="container-fluid" style="margin-bottom:0; background-color: hsla(0, 15%, 95%, .66)">  
+    <div class="view" style="background-image: url('https://raw.githubusercontent.com/JRoyWirth/KCP/master/public/Frying.JPG'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="row">
+            <br><br><br><br>
         </div>
-</div>
+        <div class="jumbotron text-center" style="margin-bottom:0; background-color: hsla(0, 15%, 95%, 0)">
+            <h1 class="white">
+                We are bubbling with excitement for your recipe!
+            </h1> 
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+                <h5 class="white" style="text-align: center">
+                    A great recipe is like a great story - the details make all the difference!
+                </h5>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+        <div class="row">
+            <br><br><br><br>
+        </div>
+    </div>
+</div>    
+
+<div class="container-fluid" style="background-color: lightgray">
+        <div class="row">
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <h6 style="text-align: center">
+                    Please share details about yourself, why you selected this recipe and recipe instructions below.
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <form action="/recipe/create" method="post">
+                    <div class="form-group">
+                        <label for="program">Program:</label>
+                        <select name="program">
+                            <option value="2Y">2Y</option>
+                            <option value="1Y">1Y</option>
+                            <option value="MMM">MMM</option>
+                            <option value="E&W">E&W</option>
+                            <option value="JV">JV</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Kellogg Graduation Year:</label>
+                        <select name="year">
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="section">Section:</label>
+                        <select name="section">
+                            <option value="Big Dogs">Big Dogs</option>
+                            <option value="Buckets">Buckets</option>
+                            <option value="Bullfrogs">Bullfrogs</option>
+                            <option value="Cash Cows">Cash Cows</option>
+                            <option value="Highlanders">Highlanders</option>
+                            <option value="Moose">Moose</option>
+                            <option value="Poets">Poets</option>
+                            <option value="Turkeys">Turkeys</option>
+                            <option value="Roadrunners">Roadrunners</option>
+                            <option value="E&W">E&W</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Title of Recipe:</label>
+                        <input type="text" class="form-control" placeholder="Apple Pie" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="shortdesc">Short description of the dish:</label>
+                        <input type="text" class="form-control" rows="2" placeholder="Pastry dessert with baked apple filling" name="shortdesc">
+                    </div>
+                    <div class="form-group">
+                        <label for="whyrecipe">This dish means something to me because: </label>
+                        <textarea class="form-control" rows="2" name="whyrecipe"> examples: Despite my friends' shock, I always wanted pie instead of cake on my birthday! Apple pie especially reminds me of growing up in....
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">This recipe comes from: (either the recipe's place of origin or wherever "home" is to you)</label>
+                        <input type="text" class="form-control" placeholder="Downers Grove, IL or Illinois, U.S.A. or United States (city level is best)" name="location">
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredients">Ingredients:</label>
+                        <textarea class="form-control" rows=10 name="ingredients">
+    2 cups flour
+    1/2 cup sugar
+    5 green apples...
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="subs">Substitutions for ingredients difficult to obtain in Evanston:</label>
+                        <textarea class="form-control" rows="3" name="subs"> Red apples can be substituted for green apples, use less sugar...
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="directions">Directions:</label>
+                        <textarea class="form-control" rows="10" name="directions">1. Core and peel each apple...
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="meal">Meal Type:</label><br>
+                        <select name="meal">
+                            <option value="App">Appetizer</option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Side Dish">Side</option>
+                            <option value="Dessert">Dessert</option>
+                            <option value="Beverage">Beverage</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h7>Dietary restrictions:<br></h7>
+                            <input type="checkbox" name="meatless" value="1">
+                                <label for="meatless"> Meat free </label><br>
+                            <input type="checkbox" name="dairyfree" value="1">
+                                <label for="dairyfree"> Dairy free </label><br>
+                            <input type="checkbox" name="glutenfree" value="1">
+                                <label for="glutenfree"> Gluten free </label><br>
+                    </div>
+                <br> <button type="submit" class="btn btn-primary">Submit</button> <br><br>
+                </form>     
+            </div>
+        </div>
+    
 </div>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <p>Kellogg Recipe Project</p>
-</div>
+<footer style="background-color: rgb(37, 26, 114); color: white">
+  <p>Posted by: Jason Wirth </p>
+  <p> Contact information: <a href="mailto:jason.wirth@kellogg.northwestern.edu">
+  Jason.Wirth@kellogg.northwestern.edu</a></p>
+</footer>
+
 </div>
