@@ -10,6 +10,7 @@ connection_string = ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/development.sqli
 DB ||= Sequel.connect(connection_string)                                              #
 DB.loggers << Logger.new($stdout) unless DB.loggers.size > 0                          #
 def view(template); erb template.to_sym; end                                          #
+set :public_folder, 'public'
 use Rack::Session::Cookie, key: 'rack.session', path: '/', secret: 'secret'           #
 before { puts; puts "--------------- NEW REQUEST ---------------"; puts }             #
 after { puts; }                                                                       #
