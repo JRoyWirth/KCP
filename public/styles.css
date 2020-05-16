@@ -17,6 +17,10 @@ h1{
     color: rgb(37, 26, 114);
 }
 
+.small {
+    font-weight: 20;
+}
+
 .white {
     font-weight: 1000;
     color: white;

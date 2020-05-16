@@ -27,7 +27,7 @@ DB.create_table! :recipe do
   String :ingredients, text: true
   String :subs, text: true
   String :directions, text: true
-  #String :photo
+  String :photo
   String :headshot
   String :meal
   Boolean :meatless
@@ -59,7 +59,8 @@ recipe_table.insert(
                     ingredients: "1 rack BBQ ribs, brown sugar, spices",
                     subs: "instead of using extra sauce, try reapplying dry rub",
                     directions: "1. pat ribs dry...",
-                    headshot: "https://images.app.goo.gl/fYWKfTdH3RG5LGGv7",
+                    photo: "https://i8.amplience.net/i/traeger/3-2-1-baby-back-ribs?w=700&sm=aspect&aspect=7:3&scaleFit=poi&$poi2$&fmt=webp",
+                    headshot: "",
                     meal: "Dinner",
                     meatless: "0",
                     dairyfree: "1",
@@ -79,6 +80,7 @@ recipe_table.insert(
                     ingredients: "1. box lasagna, 8 oz tomato paste, 1 bunch fresh basil",
                     subs: "use eggplant slices instead of ground meats",
                     directions: "1. cut italian sausage length-wise...",
+                    photo: "https://thestayathomechef.com/wp-content/uploads/2017/08/Most-Amazing-Lasagna-4-e1503516670834.jpg",
                     headshot: "https://images.app.goo.gl/fYWKfTdH3RG5LGGv7",
                     meal: "Dinner",
                     meatless: "0",
@@ -99,6 +101,7 @@ recipe_table.insert(
                     ingredients: "1 can jackfruit, 8 oz BBQ sauce (thick and spicy)",
                     subs: "n/a",
                     directions: "1. put jackfruit and sauce in a slowcooker...",
+                    photo: "https://data.thefeedfeed.com/recommended/post_3864249.jpg",
                     headshot: "https://images.app.goo.gl/fYWKfTdH3RG5LGGv7",
                     meal: "Lunch",
                     meatless: "1",
@@ -125,7 +128,7 @@ user_table.insert(
 user_table.insert(
                     namefirst: "Sai",
                     namelast: "Gunturi",
-                    email: "sai.guntari@kellogg.northwestern.edu",
+                    email: "sai.gunturi@kellogg.northwestern.edu",
                     pwd: "1234"
                     )
 
