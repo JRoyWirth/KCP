@@ -107,7 +107,8 @@ post "/recipe/create" do
         meal: params["meal"],
         meatless: params["meatless"],
         dairyfree: params["dairyfree"],
-        glutenfree: params["glutenfree"],  
+        glutenfree: params["glutenfree"],
+        photo: params["photo"],  
     )
 
     view "create_recipe"

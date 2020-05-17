@@ -67,9 +67,14 @@
     </div>
     
     <div style="align-items: right; text-align: right">
-        <a class="small" href="<%= @recipe[:photo] %>">photo cred</a>
+        <% if @recipe[:photo] = "" %>
+        <% else %>
+            <a class="small" href="<%= @recipe[:photo] %>">photo cred</a>
+        <% end %>    
     </div>
+</div>
 
+<div class="container-fluid" style="margin-bottom:0; background-color: hsla(0, 15%, 95%, .66)">
     <div class="row">
         <div class="col-sm-4">
             <h2>
