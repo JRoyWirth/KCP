@@ -1,5 +1,6 @@
 # Set up for the application and database. DO NOT CHANGE. #############################
-require "sequel"                                                                      #
+require "sequel"
+require "bcrypt"                                                                      #
 connection_string = ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/development.sqlite3"  #
 DB = Sequel.connect(connection_string)                                                #
 #######################################################################################
@@ -115,21 +116,21 @@ user_table.insert(
                     namefirst: "Jason",
                     namelast: "Wirth",
                     email: "jason.wirth@kellogg.northwestern.edu",
-                    pwd: "1234"
+                    pwd: BCrypt::Password.create("1234")
                     )
 
 user_table.insert(
                     namefirst: "Sarah",
                     namelast: "Wirth",
                     email: "sarahnwirth@gmail.com",
-                    pwd: "1234"
+                    pwd: BCrypt::Password.create("1234")
                     )
 
 user_table.insert(
                     namefirst: "Sai",
                     namelast: "Gunturi",
                     email: "sai.gunturi@kellogg.northwestern.edu",
-                    pwd: "1234"
+                    pwd: BCrypt::Password.create("1234")
                     )
 
 
