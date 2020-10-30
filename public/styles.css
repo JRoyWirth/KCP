@@ -11,6 +11,11 @@ h1{
     font-weight: 1000;
 }
 
+h6{
+    font-family: Verdana;
+    color: lightgray;
+    font-weight: 200;
+}
 
 .dark {
     font-weight: 1000;

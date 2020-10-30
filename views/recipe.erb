@@ -23,7 +23,6 @@
   <body>
 
 
-
     <nav class="navbar navbar-expand-sm bg-light navbar-light nav">
         <a class="navbar-brand" href="/">Kellogg Recipe Project</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -58,6 +57,8 @@
         </div>
     </div>
 
+    
+
             
 
     <div class="row" style="align-items: center; text-align: center">
@@ -65,13 +66,9 @@
             <img src="<%= @recipe[:photo] %>" style="max-width:100%; max-height:100%; height:auto" alt="<%= @recipe[:photo] %>">
         <div>        
     </div>
+
+    <p style="color:gray; font-size: 50%;"> Photo Credit:    <%= @recipe[:photo] %> </p>
     
-    <div style="align-items: right; text-align: right">
-        <% if @recipe[:photo] = "" %>
-        <% else %>
-            <a class="small" href="<%= @recipe[:phototwo] %>">photo cred</a>
-        <% end %>    
-    </div>
 </div>
 
 <div class="container-fluid" style="margin-bottom:0; background-color: hsla(0, 15%, 95%, .66)">
@@ -146,6 +143,14 @@
             </p>
         </div>
         <div class="col-sm-1">
+        </div>
+    </div>
+    <div class="row" style="text-align: left">
+        <div class="col-sm-1">
+            <p> Photo Credit </p>
+        </div>
+        <div class="col-sm-11">
+            <%= @recipe[:photo] %>
         </div>
     </div>
 </div>
