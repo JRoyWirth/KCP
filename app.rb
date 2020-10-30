@@ -27,7 +27,7 @@ before do
     @user_table = user_table
     @current_user = @user_table.where(id: session["user_id"]).to_a[0]
 
-    # API credentials (found on your Twilio dashboard)
+    # API credentials
     account_sid = ENV['TWILIO_ACCOUNT_SID']
     auth_token = ENV['YOUR_AUTH_TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
@@ -152,6 +152,17 @@ post "/recipe/:id/comment/create" do
     )
     
     view "create_comment"
+end
+
+get "/database" do
+    puts "params: #{params}"
+
+    pp recipe_table.all.to_a
+    @recipes = recipe_table.all.to_a
+
+    @comment_table = comment_table
+
+    view "database_backup"
 end
 
 get "/logout" do

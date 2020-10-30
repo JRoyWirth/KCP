@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <!-- Swap out "Roboto" for the font(s) you want to use -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Your own CSS -->
+    <link rel="stylesheet" href="/styles.css">
+
+  </head>
+  
+  <body>
+
+
+
+<div class="container-fluid" style="margin-bottom:0; background-color: hsla(0, 15%, 95%, .66)">  
+    <div class="view" style="background-image: url('img/Map_purp.PNG'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="jumbotron text-center" style="margin-bottom:0; background-color: hsla(0, 15%, 95%, 0)">
+            <h1 class="white">Kellogg Cuisine Project</h1> 
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-8">
+                <h5 class="white" style="text-align: center">
+                    Please enjoy fantastic recipes from your classmate's kitchens around the world. We hope you will add to our library of stories and recipes!
+                </h5>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+        <div class="row">
+            <br><br><br>
+        </div>
+    </div>
+</div>    
+
+<div class="container-fluid">
+    <div class="container" style="overflow-x:auto;">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>User_id</th>
+                <th>Year</th>
+                <th>Kwest</th>
+                <th>Title</th>
+                <th>Sh Desc</th>
+                <th>Why Recipe</th>
+                <th>Location</th>
+                <th>Subs</th>
+                <th>Directions</th>
+                <th>Meal</th>
+                <th>Meatless</th>
+                <th>Dairy Free</th>
+                <th>Gluten Free</th>
+                <th>photo</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% for recipe in @recipes %>
+                    <tr>
+                        <td>
+                            <%= recipe[:user_id] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:year] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:kwest] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:title] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:shortdesc] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:whyrecipe] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:location] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:subs] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:directions] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:meal] %>
+                        </td>
+                        
+                        <td>
+                            <%= recipe[:meatless] %>
+                        </td>
+
+                        
+                        <td>
+                            <%= recipe[:diaryfree] %>
+                        </td>
+
+                        
+                        <td>
+                            <%= recipe[:glutenfree] %>
+                        </td>
+
+                        
+                        <td>
+                            <%= recipe[:photo] %>
+                        </td>
+                    </tr>
+                <% end %>    
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="container" style="overflow-x:auto;">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>User_id</th>
+                <th>namefirst</th>
+                <th>namelast</th>
+                <th>email</th>
+                <th>pwd</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% for user in @user_table %>
+                    <tr>
+                        <td>
+                            <%= user[:id] %>
+                        </td>
+                        
+                        <td>
+                            <%= user[:namefirst] %>
+                        </td>
+                        
+                        <td>
+                            <%= user[:namelast] %>
+                        </td>
+                        
+                        <td>
+                            <%= user[:email] %>
+                        </td>
+                        
+                        <td>
+                            <%= user[:pwd] %>
+                        </td>
+                    </tr>
+                <% end %>    
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="container" style="overflow-x:auto;">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>User_id</th>
+                <th>Id</th>
+                <th>like</th>
+                <th>comment</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% for comment in @comment_table %>
+                    <tr>
+                        <td>
+                            <%= user[:user_id] %>
+                        </td>
+
+                        <td>
+                            <%= user[:id] %>
+                        </td>
+
+                        <td>
+                            <%= user[:like] %>
+                        </td>
+
+                        <td>
+                            <%= user[:comment] %>
+                        </td>
+                    </tr>
+                <% end %>    
+            </tbody>
+        </table>
+    </div>
+</div>
