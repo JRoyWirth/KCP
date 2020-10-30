@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    
+            
 
     <div class="row" style="align-items: center; text-align: center">
         <div class="row" style="display: block; margin-left: auto; margin-right: auto">
@@ -69,7 +69,7 @@
     <div style="align-items: right; text-align: right">
         <% if @recipe[:photo] = "" %>
         <% else %>
-            <a class="small" href="<%= @recipe[:photo] %>">photo cred</a>
+            <a class="small" href="<%= @recipe[:phototwo] %>">photo cred</a>
         <% end %>    
     </div>
 </div>
@@ -123,7 +123,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <p>
-                        <b>What you'll need:</b><br>
+                        <b>What you will need:</b><br>
                         <%= @recipe[:ingredients] %>
                     </p>
                 </div>
@@ -149,6 +149,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="container-fluid" style="text-align: left">
     <div class="row">
@@ -185,6 +186,7 @@
     <% end %>
 </div>
 
+
 <div class="row">
     <div class = "col-sm-12">
         <% if @current_user %>
@@ -193,14 +195,16 @@
         <% end %>
     </div>
 </div>
+
+
 </div>
 
 
 </div>
 
 <footer style="background-color: rgb(37, 26, 114); color: white">
-  <p>Posted by: Jason Wirth </p>
-  <p> Contact information: <a href="mailto:jason.wirth@kellogg.northwestern.edu">
+  <p>Posted by: Jason Wirth</p>
+  <p>Contact information: <a href="mailto:jason.wirth@kellogg.northwestern.edu">
   Jason.Wirth@kellogg.northwestern.edu</a></p>
 </footer>
 
